@@ -11,5 +11,7 @@ Read the relevant note before starting the matching exercise folder.
 | `04_memory.md` | `04_memory_intro` + `05_arenas...` | allocators, context, tracking, arenas |
 | `05_maps_strings.md` | `06_maps_and_strings` | maps, strings, builders |
 | `06_errors_context.md` | `07_error_style` + `08_packages...` | error style, defer, context, packages |
+| `07_allocators_deep.md` | `05_arenas...`, then Phase 2 + Phase 6 | allocator zoo, lifetime design, arena patterns |
 
-Deeper memory and systems notes will be added as later phases are expanded.
+Dojo-wide habits: `PRACTICE_LOOPS.md` (katas, torture, benchmarks), `REVIEW_CHECKLIST.md` (definition of done), `RESOURCES.md`, `BEST_PRACTICES.md`.
+Shared debug helper: `common/dojo_debug` (tracking-allocator session wrapper).

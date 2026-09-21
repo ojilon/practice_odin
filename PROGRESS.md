@@ -22,7 +22,14 @@ You maintain this file.
 - [ ] 08_packages_and_context
 
 ## Phase 2 — Data Structures
-- [ ] (fill as folders are expanded)
+- [ ] 01_stretchy_buffer (growth benchmark recorded)
+- [ ] 02_linked_lists (pool churn compared)
+- [ ] 03_stack_and_queue (reuses 01–02, brackets + drain run)
+- [ ] 04_hash_set (tombstones proven, dedup runs)
+- [ ] 05_hashmap (owned keys, resize checksum proof)
+- [ ] 06_ring_buffer (wrap + policies proven, app runs)
+- [ ] 07_heap_priority_queue (sort-proof + applied build)
+- [ ] 08_ds_torture_and_bench (torture green, BENCH.md, winners table)
 
 ## Phase 3 — Algorithms + Papers
 - [ ]

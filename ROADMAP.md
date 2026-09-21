@@ -61,21 +61,25 @@ Memory and allocators appear early because they are central to Odin.
 | 08 | `phase_01_core/08_packages_and_context` | multi-file packages, context system deeper, private |
 
 Full guides exist for the first few; later ones in this phase are scaffolded.
+Phase 1 is now fully scaffolded: 02 (structs/procs/polymorphism), 03 (slices/arrays/ownership), 05 (arenas + custom allocator), 06 (maps/strings/key ownership), 07 (error style + defer), 08 (multi-package capstone). Core notes 02/03/05/06/07 cover each folder; see also `PRACTICE_LOOPS.md`, `REVIEW_CHECKLIST.md`, `common/dojo_debug`.
 
 ---
 
 ## Phase 2 — Data Structures (Weeks 5–8)
 
 Build the classic structures yourself, always with explicit allocator parameters where it makes sense.
+Scaffolded in `phase_02_ds/` (see its `README.md` for order + standing rules):
 
-Suggested modules:
-- dynamic array helpers / stretchy buffer beyond the built-in
-- singly / doubly linked list
-- stack & queue (slice-backed + linked)
-- set / hash set
-- simple hashmap (educational)
-- ring buffer
-- basic binary heap / priority queue
+| # | Folder | Focus | Key deliverable |
+|---|--------|-------|-----------------|
+| 01 | `01_stretchy_buffer` | parametric growable array, 1.5x vs 2x | growth benchmark |
+| 02 | `02_linked_lists` | singly + doubly + pool-backed | churn comparison |
+| 03 | `03_stack_and_queue` | slice vs linked, reuses 01–02 | bracket-matcher + task drain |
+| 04 | `04_hash_set` | open addressing, tombstones | dedup app + probe stats |
+| 05 | `05_hashmap` | owned keys, resize proof | config-table demo |
+| 06 | `06_ring_buffer` | fixed cap, strict vs overwrite | event/log/window app |
+| 07 | `07_heap_priority_queue` | binary heap on 01, comparator | timer/frontier/top-N |
+| 08 | `08_ds_torture_and_bench` | capstone harness | torture green + BENCH.md + winners table |
 
 Each must document which allocator it uses and how ownership works.
 

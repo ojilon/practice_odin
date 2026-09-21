@@ -18,6 +18,21 @@ phase_XX_name/NN_shortname/
 
 Tone should match the existing early guides: direct, practical, no solution code, explicit about memory and reuse.
 
+Shared dojo systems (use them, don't reinvent them):
+- `PRACTICE_LOOPS.md` — kata / allocator-torture / benchmark / reading / bug-journal / review loops. New phases should name which loops they trigger.
+- `REVIEW_CHECKLIST.md` — the per-folder definition of done. Every GUIDE's "Done when" must be checkable against it.
+- `common/dojo_debug` — tracking-allocator session wrapper. Guides should point learners at it instead of re-explaining tracking setup.
+- `tools/verify_dojo.py` — structural check (each `NN_*` folder has the three markdown files, GUIDEs state Done-when). Run it after expanding a phase.
+- `RESOURCES.md`, `BEST_PRACTICES.md` — curated sources + living patterns. New phases add 1–3 entries, not link dumps.
+
+Quality bar for exercises (all phases):
+- Difficulty tiers inside `01_EXERCISES.md`: Must (proves the concept) / Stretch (natural extension) / Spike (optional deep cut). Mark them.
+- Required symbols named where reuse matters (`buf_push`, `map_get`, …) so later phases can import without guessing.
+- Allocator expectations stated per owning type (param at make vs documented `context.allocator` capture + stored allocator + destroy proc).
+- At least one deliberate broken-then-fixed trap per ownership-critical folder (dangling slice, blank-on-delete, use-after-clear, stale view after grow). Broken stays labeled, out of the happy path.
+- At least one measurement or allocator-swap comparison from Phase 2 onward (machine + flags + N recorded).
+- `02_QUESTIONS.md` boxes demand observed output (numbers, reports, tallies), not theory.
+
 ---
 
 ## How to expand a phase
@@ -34,10 +49,11 @@ Tone should match the existing early guides: direct, practical, no solution code
 ## Phase-specific guidance
 
 ### Phase 1 (remaining folders)
-- Finish any incomplete core language + memory folders.
+- DONE (fully scaffolded): 02, 03, 05, 06, 07, 08 + core_notes 02/03/05/06/07. Keep them in sync with the notes index.
 - Every memory-related exercise must force use of the tracking allocator in debug and discussion of ownership.
 
 ### Phase 2 — Data structures
+- DONE (scaffolded): `phase_02_ds/` 01–08 with README, guides, exercises, questions. Capstone 08 (torture + bench + winners table) gates Phase 3 imports.
 - Each structure takes an allocator (or documents that it uses context.allocator).
 - Provide clear ownership and free/destroy procedures.
 - Prefer data-oriented layouts where natural.

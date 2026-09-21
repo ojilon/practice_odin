@@ -37,7 +37,13 @@ BUILD_CHAIN.md
 EXPLORATION.md
 SCAFFOLD_FOR_FUTURE_AGENTS.md
 PROGRESS.md
+PRACTICE_LOOPS.md            # kata / torture / benchmark / reading rhythms
+REVIEW_CHECKLIST.md          # definition of done per folder
+RESOURCES.md                 # curated sources
+BEST_PRACTICES.md            # living pattern log
 core_notes/                  # language & memory reference sheets
+common/dojo_debug/           # shared tracking-allocator helper
+tools/verify_dojo.py         # scaffold structure checker
 phase_01_core/               # language + memory (early full guides)
 phase_02_ds/                 # data structures
 phase_03_algo_papers/        # algorithms + short paper adventures
@@ -63,6 +69,8 @@ Each fully-specified exercise folder typically contains:
 - Most days: one focused folder or one clear sub-goal.
 - Early on: heavy emphasis on understanding allocators and the tracking allocator.
 - Weekly: one exploration activity (read `core:` source, a paper, or a small real project).
+- Retention: one kata or allocator-torture loop per week on an older folder (see `PRACTICE_LOOPS.md`).
+- Before marking done: run `REVIEW_CHECKLIST.md`; add the sign-off line.
 - At major milestones: ship something with a README.
 
 ---
