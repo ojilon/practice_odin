@@ -11,6 +11,7 @@ Build lasting skill in Odin by creating a coherent stack of tools that progressi
 - A text editor built on that GUI
 - Internal tools that the editor itself helps you improve
 - The habit of reading papers and real systems and turning them into short, shippable experiments
+- Practical experience parsing real document and media formats (PDF subsets, XML, simple audio/video containers, etc.)
 
 Dogfooding is intentional: once the editor exists, you use it to work on the editor, the GUI library, and the earlier tools.
 
@@ -23,12 +24,12 @@ Times assume ~1–2 focused hours most days. Adjust freely.
 | Months | Phase | Focus |
 |--------|-------|-------|
 | 0–2    | 0–3   | Language core, memory, basic data structures, first tools |
-| 2–4    | 4–5   | Deeper core usage, algorithms, short paper adventures |
+| 2–4    | 4–5   | Deeper core usage, algorithms, short paper adventures, first format parsers |
 | 4–6    | 6     | Systems, Win32, low-level facilities |
 | 6–8    | 7     | GUI library (the big intermediate goal) |
 | 8–11   | 8     | Text editor on your GUI + earlier tools |
 | 11–14  | 9     | Internal tools + dogfooding loop |
-| 14–18  | 10+   | Productization, more papers, capstones |
+| 14–18  | 10+   | Productization, more papers, format tools, capstones |
 
 ---
 
@@ -80,7 +81,7 @@ Each must document which allocator it uses and how ownership works.
 
 ---
 
-## Phase 3 — Algorithms + Short Paper Adventures (Weeks 9–12)
+## Phase 3 — Algorithms + Short Paper Adventures + Format Parsers (Weeks 9–14)
 
 - Sorting (a few classics + comparison)
 - Searching, binary search on sorted data
@@ -90,8 +91,14 @@ Each must document which allocator it uses and how ownership works.
   - Basic pathfinding (A* lite)
   - A tiny parser combinator or recursive descent
   - A classic numerical method or geometric algorithm
+- **Document & media format adventures** (also short, practical):
+  - Minimal XML / HTML subset parser
+  - Simple PDF object / cross-reference table reader (read-only subset)
+  - Basic WAV or raw audio frame understanding
+  - Tiny container demux ideas (e.g. simplified RIFF or ISO BMFF concepts)
+  - JSON is already familiar; push into a stricter or streaming variant
 
-These are meant to be short, fun, and documented with “what I learned from the paper”.
+These are meant to be short, fun, and documented with “what I learned from the paper / spec”.
 
 ---
 
@@ -118,6 +125,7 @@ Small but complete command-line tools that reuse your earlier packages:
 - simple file processor / log parser
 - tiny static site or markdown processor
 - a “project helper” that will later integrate with the editor
+- one tool that uses a format parser from Phase 3 (e.g. XML stats or simple PDF info)
 
 ---
 
@@ -193,6 +201,7 @@ The loop is intentional: editor improves the tools → tools improve the editor.
 - Extract the strongest packages into clean, documented repositories
 - Proper READMEs, examples, and basic tests where useful
 - More paper re-implementations at higher fidelity
+- Deeper format tools (more complete PDF subset, structured document tools, etc.)
 - One or two larger capstone projects of your choosing (game prototype, specialized tool, systems experiment, etc.)
 - Living best-practices document collected throughout the journey
 
@@ -205,6 +214,7 @@ The loop is intentional: editor improves the tools → tools improve the editor.
 - **Q-REUSE:** Later packages and apps must import or clearly cite earlier ones.
 - **Q-SHIP:** At major milestones (GUI, editor, tools) produce something you can put on GitHub with a clear README.
 - **Q-DOGFOOD:** Once the editor exists, prefer it for further work on this project.
+- **Q-FORMAT:** At least a few times implement a minimal reader for a real document or media format from its specification or a clear secondary source.
 
 ---
 
